@@ -1,0 +1,150 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #f3e7ff 0%, #e1c7ff 100%);
+  color: #4a1a5c;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #6a1b9a;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(106, 27, 154, 0.2);
+}
+
+#malla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  border: 2px solid;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 25px rgba(106, 27, 154, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(106, 27, 154, 0.25);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #9c27b0, #673ab7);
+}
+
+.card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.card p {
+  margin: 0.5rem 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.card.aprobado {
+  background: linear-gradient(135deg, #e1bee7 0%, #ce93d8 100%);
+  border-color: #8e24aa;
+  color: #4a148c;
+}
+
+.card.aprobado h3 {
+  color: #4a148c;
+  text-decoration: line-through;
+}
+
+.card.habilitado {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e8eaf6 100%);
+  border-color: #7b1fa2;
+  color: #4a1a5c;
+}
+
+.card.habilitado:hover {
+  background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 100%);
+}
+
+.card.bloqueado {
+  background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+  border-color: #bdbdbd;
+  color: #9e9e9e;
+  opacity: 0.7;
+}
+
+.card.bloqueado::before {
+  background: #bdbdbd;
+}
+
+button {
+  background: linear-gradient(135deg, #9c27b0 0%, #673ab7 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  margin: 0.3rem 0.3rem 0 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);
+}
+
+button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #8e24aa 0%, #5e35b1 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(156, 39, 176, 0.4);
+}
+
+button:disabled {
+  background: linear-gradient(135deg, #ce93d8 0%, #b39ddb 100%);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.botones {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-desaprobar {
+  background: linear-gradient(135deg, #e91e63 0%, #ad1457 100%) !important;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3) !important;
+}
+
+.btn-desaprobar:hover {
+  background: linear-gradient(135deg, #c2185b 0%, #880e4f 100%) !important;
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4) !important;
+}
+
+@media (max-width: 768px) {
+  #malla {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+}
