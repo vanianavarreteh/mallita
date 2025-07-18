@@ -65,3 +65,4 @@ function renderMalla() {
         <button onclick="aprobarRamo('${ramo.codigo}')" ${aprobado || !requisitosCumplidos ? "disabled" : ""}>
           ${aprobado ? "Aprobado" : "Aprobar"}
         </button>
+        
